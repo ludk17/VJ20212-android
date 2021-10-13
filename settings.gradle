@@ -1,0 +1,2 @@
+rootProject.name = "VJ202102"
+include ':app'
