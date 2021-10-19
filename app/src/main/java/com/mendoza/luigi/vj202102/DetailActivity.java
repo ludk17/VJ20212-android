@@ -45,6 +45,7 @@ public class DetailActivity extends AppCompatActivity {
                 .build();
 
         GitHubService service = retrofit.create(GitHubService.class);
+
         service.allRepos().enqueue(new Callback<List<Repository>>() {
             @Override
             public void onResponse(Call<List<Repository>> call, Response<List<Repository>> response) {
