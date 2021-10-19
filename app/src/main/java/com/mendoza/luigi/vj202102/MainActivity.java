@@ -17,27 +17,56 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.btnChangeText);
 
+        Log.i("MAIN_APP_CICLO_DE_VIDA", "onCreate");
+
+        Button button = findViewById(R.id.btnChangeText);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText input = findViewById(R.id.inputHello);
                 String value = String.valueOf(input.getText());
-                Log.i("MAIN_APP", "El valor de input es: " + value);
-
-                // pasar a otra actividad
                 Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                 intent.putExtra("value", value);
                 startActivity(intent);
-
-                //llamar por telefono
-//                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", value, null));
-//                startActivity(intent);
-
             }
         });
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("MAIN_APP_CICLO_DE_VIDA", "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("MAIN_APP_CICLO_DE_VIDA", "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("MAIN_APP_CICLO_DE_VIDA", "onPause");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("MAIN_APP_CICLO_DE_VIDA", "onRestart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("MAIN_APP_CICLO_DE_VIDA", "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("MAIN_APP_CICLO_DE_VIDA", "onDestroy");
     }
 }

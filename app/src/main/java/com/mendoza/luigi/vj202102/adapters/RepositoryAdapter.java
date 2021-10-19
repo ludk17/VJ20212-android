@@ -12,14 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mendoza.luigi.vj202102.MapActivity;
 import com.mendoza.luigi.vj202102.R;
+import com.mendoza.luigi.vj202102.entities.Repository;
 
 import java.util.List;
 
-public class NameAdapter extends RecyclerView.Adapter<NameAdapter.NameViewHolder> {
+public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.NameViewHolder> {
 
-    private List<String> data;
+    private List<Repository> data;
 
-    public NameAdapter(List<String> data) {
+    public RepositoryAdapter(List<Repository> data) {
         this.data = data;
     }
 
@@ -33,21 +34,12 @@ public class NameAdapter extends RecyclerView.Adapter<NameAdapter.NameViewHolder
     }
 
     @Override
-    public void onBindViewHolder(NameAdapter.NameViewHolder holder, int position) {
-        TextView tv = holder.itemView.findViewById(R.id.tvName);
-        String value = data.get(position);
-        tv.setText(value);
-
-//        Button btnCliCk = holder.itemView.findViewById(R.id.btnCliCk);
-//        btnCliCk.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(holder.itemView.getContext(), value, Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(holder.itemView.getContext(), MapActivity.class);
-//                intent.putExtra("value", value);
-//                holder.itemView.getContext().startActivity(intent);
-//            }
-//        });
+    public void onBindViewHolder(RepositoryAdapter.NameViewHolder holder, int position) {
+        TextView tvId = holder.itemView.findViewById(R.id.tvId);
+        TextView tvName = holder.itemView.findViewById(R.id.tvName);
+        Repository repo = data.get(position);
+        tvId.setText(String.valueOf(repo.getId()));
+        tvName.setText(repo.getName());
     }
 
     @Override
