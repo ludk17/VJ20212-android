@@ -1,16 +1,12 @@
 package com.mendoza.luigi.vj202102.adapters;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mendoza.luigi.vj202102.MapActivity;
 import com.mendoza.luigi.vj202102.R;
 
 import java.util.List;
